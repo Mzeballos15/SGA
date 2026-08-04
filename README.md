@@ -33,6 +33,7 @@ Durante el desarrollo del proyecto se incorporarán progresivamente nuevas tecno
 ## Tecnologías
 Actualmente:
 - HTML5
+- JavaScrip
 
 Próximamente:
 - CSS3
@@ -45,7 +46,8 @@ Próximamente:
 
 ## Estado del proyecto
 
-🚧 En desarrollo.
+- Versión:
+clase 02
 
 
 
