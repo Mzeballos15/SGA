@@ -72,49 +72,94 @@ Y MIENTRAS ESPERA TIENE QUE APARECER MIENTRAS TANTO EL PROGRAMA SIGUE EJECUTANDO
 
 
 
-function obtenerClima(){
-    return new Promise ((resolve) =>{
-        setTimeout(() => {
-            resolve ("22°c - Soleado")
-        },2000);
-    })
+// function obtenerClima(){
+//     return new Promise ((resolve) =>{
+//         setTimeout(() => {
+//             resolve ("22°c - Soleado")
+//         },2000);
+//     })
+// }
+
+// // con then 
+// obtenerClima().then((clima) =>{
+//     console.log(clima)
+// });
+
+// async function mostrarClima(){
+//     const clima = await obtenerClima()
+//     console.log(clima)
+// }
+
+// mostrarClima()
+
+// function consultarSaldo(){
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//            resolve(125000) 
+//         }, 3000);
+//     })
+// }
+
+// async function monstrarSaldo(){
+//     const saldo = await consultarSaldo()
+//     console.log(`Su saldo es: $${saldo}`)
+// }
+// monstrarSaldo()
+
+// function iniciarSesion(){
+//     return new Promise ((resolve) =>{
+//         setTimeout(() => {
+//            resolve("Bienvenida, Mely") 
+//         }, 2000);
+//     })
+// }
+// async function saludar(){
+//     const saludo = await iniciarSesion()
+//     console.log(saludo)
+// }
+// saludar()
+
+
+
+//POST
+ async function obtenerPost(){
+     const respuesta = await fetch("https://jsonplaceholder.typicode.com/posts")
+     const posts = await respuesta.json()
+    return posts;
+ }
+ obtenerPost()
+
+ function mostrarPost(posts){
+     for (const post of posts ){
+         console.log(post.id, post.title)
+     }
+ }
+
+ async function iniciar(){
+     const post = await obtenerPost()
+     mostrarPost(post);
+ }
+ iniciar();
+
+
+
+ //COMMENTS
+async function obtenerComments(){
+    const respuesta = await fetch("https://jsonplaceholder.typicode.com/comments")
+    const comments = await respuesta.json()
+   // console.table(alumnos)
+   return comments;
+}
+obtenerComments()
+
+function mostrarComments(comments){
+    for (const comment of comments ){
+        console.log(comment.id, comment.name)
+    }
 }
 
-// con then 
-obtenerClima().then((clima) =>{
-    console.log(clima)
-});
-
-async function mostrarClima(){
-    const clima = await obtenerClima()
-    console.log(clima)
+async function iniciar(){
+    const comment = await obtenerComments()
+    mostrarComments(comment);
 }
-
-mostrarClima()
-
-function consultarSaldo(){
-    return new Promise((resolve) => {
-        setTimeout(() => {
-           resolve(125000) 
-        }, 3000);
-    })
-}
-
-async function monstrarSaldo(){
-    const saldo = await consultarSaldo()
-    console.log(`Su saldo es: $${saldo}`)
-}
-monstrarSaldo()
-
-function iniciarSesion(){
-    return new Promise ((resolve) =>{
-        setTimeout(() => {
-           resolve("Bienvenida, Mely") 
-        }, 2000);
-    })
-}
-async function saludar(){
-    const saludo = await iniciarSesion()
-    console.log(saludo)
-}
-saludar()
+iniciar();
