@@ -84,7 +84,17 @@ async function obtenerAlumnos(){
 obtenerAlumnos()
 
 function mostrarAlumnos(alumnos){
-    console.table(alumnos)
+   // console.table(alumnos)
+   console.log(typeof alumnos)
+   localStorage.setItem("alumnos", JSON.stringify(alumnos))
+   const datos = localStorage.getItem("alumnos")
+   console.log(typeof datos)
+   console.log(datos)
+   const recuperarAlumnos = JSON.parse(datos)
+   console.log(typeof recuperarAlumnos)
+   console.table(recuperarAlumnos)
+
+
     //console.log(alumnos)
     // for (const alumno of alumnos){
     //     console.log(alumno.name)
