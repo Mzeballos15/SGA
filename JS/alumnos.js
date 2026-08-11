@@ -75,37 +75,86 @@
 // mostrarDocentes()
 
 
-async function obtenerAlumnos(){
-    const respuesta = await fetch("https://jsonplaceholder.typicode.com/users")
-    const alumnos = await respuesta.json()
-   // console.table(alumnos)
-   return alumnos;
+// async function obtenerAlumnos(){
+//     const respuesta = await fetch("https://jsonplaceholder.typicode.com/users")
+//     const alumnos = await respuesta.json()
+//    // console.table(alumnos)
+//    return alumnos;
+// }
+// obtenerAlumnos()
+
+// function mostrarAlumnos(alumnos){
+//    // console.table(alumnos)
+//    console.log(typeof alumnos)
+//    localStorage.setItem("alumnos", JSON.stringify(alumnos))
+//    const datos = localStorage.getItem("alumnos")
+//    console.log(typeof datos)
+//    console.log(datos)
+//    const recuperarAlumnos = JSON.parse(datos)
+//    console.log(typeof recuperarAlumnos)
+//    console.table(recuperarAlumnos)
+
+
+//     //console.log(alumnos)
+//     // for (const alumno of alumnos){
+//     //     console.log(alumno.name)
+//     // }
+// }
+
+// async function iniciar(){
+//     const alumnos = await obtenerAlumnos()
+//     mostrarAlumnos(alumnos);
+// }
+// iniciar();
+
+const formulario = document.querySelector("#formAlumno")
+
+
+formulario.addEventListener("submit", function(event){
+    event.preventDefault();
+
+const nombre = document.querySelector("#nombre").value
+const carrera = document.querySelector("#carrera").value
+const correo = document.querySelector("#correo").value
+
+ const alumno ={
+    id: Date.now(),
+    nombre: nombre,
+    carrera: carrera,
+    correo: correo
+ }
+  const alumnos = obtenerAlumnos()
+  alumnos.push(alumno)
+
+  localStorage.setItem("alumnos", JSON.stringify(alumnos))
+
+  mostrarAlumnos(alumnos)
+
+  formulario.reset()
+
+});
+
+function obtenerAlumnos(){
+    const datos = localStorage.getItem("alumnos")
+    if (datos){
+        return JSON.parse(datos)
+    }
+    return[]
 }
-obtenerAlumnos()
+
+const listaAlumnos = document.querySelector("#listaAlumnos")
 
 function mostrarAlumnos(alumnos){
-   // console.table(alumnos)
-   console.log(typeof alumnos)
-   localStorage.setItem("alumnos", JSON.stringify(alumnos))
-   const datos = localStorage.getItem("alumnos")
-   console.log(typeof datos)
-   console.log(datos)
-   const recuperarAlumnos = JSON.parse(datos)
-   console.log(typeof recuperarAlumnos)
-   console.table(recuperarAlumnos)
-
-
-    //console.log(alumnos)
-    // for (const alumno of alumnos){
-    //     console.log(alumno.name)
-    // }
+    listaAlumnos.innerHTML = ""
+    for (const alumno of alumnos){
+        listaAlumnos.innerHTML += `
+        <li>
+        ${alumno.nombre} -
+        ${alumno.carrera} -
+        ${alumno.correo}
+        </li>`;
+    }
 }
-
-async function iniciar(){
-    const alumnos = await obtenerAlumnos()
-    mostrarAlumnos(alumnos);
-}
-iniciar();
 
 
 
