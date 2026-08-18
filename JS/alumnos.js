@@ -192,8 +192,19 @@ function mostrarAlumnos(alumnos){
           <td>${alumno.carrera}</td>
           <td>${alumno.correo}</td>
           <td>
-             <button class= "btn-editar" data-id="${alumno.id}" >Editar</button>
-             <button class= "btn-eliminar" data-id="${alumno.id}">Eliminar</button>
+             <button 
+             class= "btn-editar"
+             data-id="${alumno.id}"
+             title ="Editar Alumno">
+             <i class = "fa-solid fa-pen"></i>
+             </button>
+
+             <button 
+             class= "btn-eliminar" 
+             data-id="${alumno.id}"
+             title = "Eliminar Alumno">
+             <i class="fa-solid fa-trash"></i>
+             </button>
           </td>
         </tr>
         `;
@@ -207,16 +218,26 @@ function eliminarAlumno(id){
     );
     localStorage.setItem("alumnos", JSON.stringify(alumnosActualizados))
     mostrarAlumnos(alumnosActualizados)
+    if(alumnoEditado === id){
+        formulario.reset()
+        alumnoEditado = null
+        formulario.querySelector("button").textContent = "Guardar Alumno"
+    }
     mostrarMensaje("Alumno eliminado correctamente", "mje-exito")
 }
 
 listaAlumnos.addEventListener("click",(e) =>{
-    if(e.target.classList.contains("btn-eliminar")){
-        const id = Number(e.target.dataset.id)
-        eliminarAlumno(id)
+    const boton_el = e.target.closest(".btn-eliminar")
+    if(boton_el){
+        const id = Number(boton_el.dataset.id)
+        const confirmar = confirm("¿Estás seguro de eliminar este alumno?")
+        if (confirmar){
+              eliminarAlumno(id)
+        }
     }
-    if(e.target.classList.contains("btn-editar")){
-        const id = Number(e.target.dataset.id)
+    const boton_ed = e.target.closest(".btn-editar")
+    if(boton_ed){
+        const id = Number(boton_ed.dataset.id)
         editarAlumno(id)
     }
 })
@@ -229,6 +250,7 @@ function editarAlumno (id){
     document.querySelector("#correo").value = alumno.correo;
     alumnoEditado = id;
     formulario.querySelector("button").textContent = "Actualizar Alumno"
+    document.querySelector("#nombre").focus()
 
 }
 
