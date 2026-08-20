@@ -34,9 +34,9 @@ Durante el desarrollo del proyecto se incorporarán progresivamente nuevas tecno
 Actualmente:
 - HTML5
 - JavaScrip
+- CSS3
 
 Próximamente:
-- CSS3
 - JavaScript
 - React
 - Node.js
@@ -47,7 +47,19 @@ Próximamente:
 ## Estado del proyecto
 
 - Versión:
-clase 02
+Clase 10 - Estructura actual 
+SGA/
+|
+|__ index.html
+|__ alumnos.html
+|__ docentes.html
+|
+|__ CSS/
+|   estilos.css
+|
+|__ JS/
+    alumnos.js
+    docentes.js
 
 
 
