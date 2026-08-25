@@ -1,113 +1,5 @@
-// const alumnos = [
-//     {
-//         id: 1,
-//         nombre: "Ana"
-//     },
-//     {
-//         id: 2,
-//         nombre: "Jose"
-//     }
-// ];
-// function obtenerAlumnos(){
-//     return new Promise ((resolve) =>{
-//         setTimeout(() => {
-//            resolve(alumnos) 
-//         }, 2000);
-//     })
-// }
-// async function iniciar(){
-//     const datos = await obtenerAlumnos()
-//     console.table(datos)
-// }
-// iniciar()
 
-// //CREAR OBTENERMATERIAS()
-// // CREAR OBTENERDOCENTES()
-// // MOSTRAR LOS DATOS A TRAVES DE ASYNC/AWAIT
-
-// const materias = [
-//     {
-//         id: 1,
-//         materia: "Matemáticas"
-//     },
-//     {
-//         id: 2,
-//         materia: "Programación"
-//     }
-// ];
-
-// function obtenerMaterias(){
-//     return new Promise ((resolve) =>{
-//         setTimeout(() => {
-//            resolve(materias) 
-//         }, 2000);
-//     })
-// }
-// async function mostrarMaterias(){
-//     const materia = await obtenerMaterias()
-//     console.table(materia)
-// }
-// mostrarMaterias()
-
-// //DOCENTES
-// const docentes = [
-//     {
-//         id: 1,
-//         materia: "Juan Peréz"
-//     },
-//     {
-//         id: 2,
-//         materia: "Ana Flores"
-//     }
-// ];
-
-// function obtenerDocentes(){
-//     return new Promise ((resolve) =>{
-//         setTimeout(() => {
-//            resolve(docentes) 
-//         }, 2000);
-//     })
-// }
-// async function mostrarDocentes(){
-//     const docente = await obtenerDocentes()
-//     console.table(docente)
-// }
-// mostrarDocentes()
-
-
-// async function obtenerAlumnos(){
-//     const respuesta = await fetch("https://jsonplaceholder.typicode.com/users")
-//     const alumnos = await respuesta.json()
-//    // console.table(alumnos)
-//    return alumnos;
-// }
-// obtenerAlumnos()
-
-// function mostrarAlumnos(alumnos){
-//    // console.table(alumnos)
-//    console.log(typeof alumnos)
-//    localStorage.setItem("alumnos", JSON.stringify(alumnos))
-//    const datos = localStorage.getItem("alumnos")
-//    console.log(typeof datos)
-//    console.log(datos)
-//    const recuperarAlumnos = JSON.parse(datos)
-//    console.log(typeof recuperarAlumnos)
-//    console.table(recuperarAlumnos)
-
-
-//     //console.log(alumnos)
-//     // for (const alumno of alumnos){
-//     //     console.log(alumno.name)
-//     // }
-// }
-
-// async function iniciar(){
-//     const alumnos = await obtenerAlumnos()
-//     mostrarAlumnos(alumnos);
-// }
-// iniciar();
-
-const formulario = document.querySelector("#formAlumno")
+const formulario = document.querySelector("#formulario")
 const mensaje =  document.querySelector("#mensaje")
 const listaAlumnos = document.querySelector("#listaAlumnos")
 let alumnoEditado = null
@@ -158,7 +50,7 @@ formulario.addEventListener("submit", function(event){
     mostrarMensaje("Alumno actualizado correctamente", "mje-exito")
   }
 
-  localStorage.setItem("alumnos", JSON.stringify(alumnos))
+  //localStorage.setItem("alumnos", JSON.stringify(alumnos))
   mostrarAlumnos(alumnos)
   formulario.reset()
 
@@ -172,12 +64,12 @@ function obtenerAlumnos(){
     return[]
 }
 
-function mostrarMensaje(texto, tipo){
+function mostrarMensaje(texto, clase) {
     mensaje.textContent= texto;
-    mensaje.className = tipo
+    mensaje.className = `mensaje ${clase}`
+    mensaje.style.display = "block"
     setTimeout(() => {
-        mensaje.textContent = " ";
-        mensaje.className = "oculto"
+        mensaje.style.display = "none"
     }, 3000);
 }
 
