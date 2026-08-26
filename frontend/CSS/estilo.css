@@ -148,6 +148,10 @@ th {
     background-color: #16a34a;
 }
 
+.mje-adv{
+    background-color: #f9ce4e;
+}
+
 .btn-editar, .btn-eliminar {
     border: none;
     padding: 8px 10px;

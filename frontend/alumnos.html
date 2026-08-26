@@ -20,7 +20,7 @@
         <header>
             <nav>
                 <a href="index.html">Inicio</a>
-                <a href="alumnos.html">Alumnos</a>
+                <a href="alumnos.html" class="activo">Alumnos</a>
                 <a href="docentes.html">Docentes</a>
             </nav>
         </header>
@@ -28,7 +28,7 @@
       <h1>Gestión de Alumnos</h1>
             <section class="formulario-container">
      <h2>Alta de Alumnos</h2>
-      <form id="formulario">
+        <form id="formulario">
                     <div class="campo">
                         <label for="nombre">Nombre</label>
                         <input type="text" id="nombre">
@@ -41,8 +41,11 @@
                         <label for="correo">Correo electrónico</label>
                         <input type="texto" id="correo">
                     </div>
-     <button type="submit">Guardar Alumno</button>
-      </form>
+                    <div class="acciones-form">
+                    <button type="submit" id="btnGuardar">Guardar Alumno</button>
+                    <button type="button" id="btnCancelar" class="btn-cancelar">Cancelar</button>
+                    </div>
+        </form>
     </section>
     
      <section class="lista-container">

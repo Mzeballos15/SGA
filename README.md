@@ -47,21 +47,35 @@ Próximamente:
 ## Estado del proyecto
 
 - Versión:
-Clase 10 - Estructura actual 
+Clase 12 - Estructura actual 
 SGA/
-|
-|__ index.html
-|__ alumnos.html
-|__ docentes.html
-|
-|__ CSS/
-|   estilos.css
-|
-|__ JS/
-    alumnos.js
-    docentes.js
+frontend
+ |
+ |__ index.html
+ |__ alumnos.html
+ |__ docentes.html
+ |
+ |__ CSS/
+ |    estilos.css
+ |
+ |__ JS/
+     alumnos.js
+     docentes.js
+backend
 
+## Estado actual
+- Página de inicio y navegación entre módulos
+- Módulo alumnos docentes
+- CRUD alumnos
+- Validaciónes de formularios
+- Persistencia mediante localStorage
+- Organización del código y refactorización
+- Separación inicial entre Frontend y Backend
 
+## Almacenamiento
+- localStorage
+- JSON.stringify()
+- JSON.parse()
 
 ## Autor
 Melany Zeballos

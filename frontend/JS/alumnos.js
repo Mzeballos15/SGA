@@ -4,6 +4,9 @@ const mensaje =  document.querySelector("#mensaje")
 const listaAlumnos = document.querySelector("#listaAlumnos")
 let alumnoEditado = null
 let alumnoEditar = null
+const btnCancelar = document.querySelector("#btnCancelar")
+btnCancelar.style.display ="none"
+const btnGuardar = document.querySelector("#btnGuardar")
 
 
 formulario.addEventListener("submit", function(event){
@@ -58,13 +61,13 @@ formulario.addEventListener("submit", function(event){
         //         return
         //     }
         if (JSON.stringify(datosActuales) === JSON.stringify(alumnoEditar)){
-            mostrarMensaje("No se realizaron cambios", "mje-error")
+            mostrarMensaje("No se realizaron cambios", "mje-adv")
             return
         }
 
      alumnoEditado = null
      alumnoEditar = null
-    formulario.querySelector("button").textContent = "Guardar Alumno"
+    btnGuardar.textContent = "Guardar Alumno"
     
     mostrarMensaje("Alumno actualizado correctamente", "mje-exito")
   }
@@ -120,7 +123,7 @@ function eliminarAlumno(id){
     if(alumnoEditado === id){
         formulario.reset()
         alumnoEditado = null
-        formulario.querySelector("button").textContent = "Guardar Alumno"
+        btnGuardar.textContent = "Guardar Alumno"
     }
     mostrarMensaje("Alumno eliminado correctamente", "mje-exito")
 }
@@ -147,18 +150,32 @@ function editarAlumno (id){
     document.querySelector("#nombre").value = alumno.nombre;
     document.querySelector("#carrera").value = alumno.carrera;
     document.querySelector("#correo").value = alumno.correo;
+
      alumnoEditar = {
      nombre: alumno.nombre,
      carrera: alumno.carrera,
      correo: alumno.correo
     }
     alumnoEditado = id;
-    formulario.querySelector("button").textContent = "Actualizar Alumno"
+    btnCancelar.style.display = "inline-block"
+    btnGuardar.textContent = "Actualizar Alumno"
     document.querySelector("#nombre").focus()
 
 }
 
+function cancelarEdicion(){
+    formulario.reset()
+    alumnoEditado = null
+    alumnoEditar = null
+    btnGuardar.textContent="Guardar Alumno"
+    btnCancelar.style.display = "none"
+    document.querySelector("#nombre").focus()
+}
+
+btnCancelar.addEventListener("click", cancelarEdicion)
+
 const alumnos = obtenerAlumnos()
 mostrarAlumnos(alumnos)
+
 
 
