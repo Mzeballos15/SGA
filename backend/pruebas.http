@@ -1,0 +1,19 @@
+GET http://localhost:3000/alumnos
+
+###
+GET http://localhost:3000/alumnos/1
+
+//MOSTRAR DOCENTES EN GENERAL
+###
+GET http://localhost:3000/docentes
+
+//MOSTRAR DOCENTE ESPECÍFICO
+###
+GET http://localhost:3000/docentes/1
+
+
+###
+GET http://localhost:3000/docentes/4
+
+
+
