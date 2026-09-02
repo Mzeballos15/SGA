@@ -11,9 +11,44 @@ GET http://localhost:3000/docentes
 ###
 GET http://localhost:3000/docentes/1
 
-
 ###
 GET http://localhost:3000/docentes/4
 
+###
+//Post es lo que necesito para crear un nuevo recurso
+POST http://localhost:3000/alumnos
+//digo en que formato va a ir la información en este caso json
+Content-Type: application/json 
 
+{
+    "id":3,
+    "nombre":"Lucía",
+    "carrera":"Programación"
+}
 
+###
+POST http://localhost:3000/alumnos
+Content-Type: application/json
+
+{
+    "id":4,
+    "nombre":"Fernando",
+    "carrera":"Inglés"
+} 
+
+###
+// put actualiza
+PUT http://localhost:3000/alumnos/2
+Content-Type: application/json
+
+{
+    "id":2,
+    "nombre":"Juan Perez",
+    "carrera":"Sistemas"
+}
+
+###
+GET http://localhost:3000/alumnos/2
+
+###
+DELETE http://localhost:3000/alumnos/2

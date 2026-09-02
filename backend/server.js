@@ -1,7 +1,11 @@
 const express =require("express")
 const app = express()
+app.use(express.json()) 
 
-const alumnos = [
+const alumnosRoutes = require("./routes/alumnos.routes")
+app.use("/alumnos", alumnosRoutes)
+
+let alumnos = [
     {
         id:1,
         nombre: "Ana",
@@ -14,15 +18,14 @@ const alumnos = [
     }
 ]
 
-app.get("/alumnos", (req, res) => {
-    res.json(alumnos)
+// Creo un middleware
+app.use((req, res, next) => {
+    console.log(req.method)
+    console.log(req.url)
+    next()
 })
 
-app.get("/alumnos/:id", (req, res) =>{
-    const id = Number(req.params.id)
-    const alumno = alumnos.find(a => a.id === id)
-    res.json(alumno)
-})
+
 
 const docentes = [
     {
