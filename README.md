@@ -30,17 +30,17 @@ Durante el desarrollo del proyecto se incorporarán progresivamente nuevas tecno
 
 
 
+
 ## Tecnologías
 Actualmente:
 - HTML5
 - JavaScrip
 - CSS3
-
-Próximamente:
-- JavaScript
-- React
 - Node.js
 - Express
+
+Próximamente:
+- React
 - MongoDB
 
 
@@ -71,6 +71,11 @@ backend
 - Persistencia mediante localStorage
 - Organización del código y refactorización
 - Separación inicial entre Frontend y Backend
+- Implementación de validaciones para los datos recibidos mediante req.body
+- Uso de status 400 para datos invalidos 
+- Status 404 para alumno no encontrado
+- Status 201 para registrar nuevo alumno
+- Manejo básico de errores
 
 ## Almacenamiento
 - localStorage
