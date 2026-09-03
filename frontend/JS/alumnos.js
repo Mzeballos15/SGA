@@ -68,7 +68,6 @@ formulario.addEventListener("submit", function(event){
      alumnoEditado = null
      alumnoEditar = null
     btnGuardar.textContent = "Guardar Alumno"
-    
     mostrarMensaje("Alumno actualizado correctamente", "mje-exito")
   }
 
