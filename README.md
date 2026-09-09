@@ -38,10 +38,11 @@ Actualmente:
 - CSS3
 - Node.js
 - Express
+- MongoDB
 
 Próximamente:
 - React
-- MongoDB
+
 
 
 ## Estado del proyecto
@@ -75,12 +76,19 @@ backend
 - Uso de status 400 para datos invalidos 
 - Status 404 para alumno no encontrado
 - Status 201 para registrar nuevo alumno
-- Manejo básico de errores
+- Manejo básico de errores en las operaciones del CRUD
+- Instalación de mongoose
+- Creación de la conexión con MongoDB en config/database.js
+- Creación del Schema y modelo Alumno
+- Reemplazo del array en memoria por una colección de MongoDB
+- Modificación de GET/ alumnos para consultar MongoDB mediante mongoose
+- Prueba de la API con datos almacenados en MongoDB
 
 ## Almacenamiento
 - localStorage
 - JSON.stringify()
 - JSON.parse()
+- MongoDB
 
 ## Autor
 Melany Zeballos

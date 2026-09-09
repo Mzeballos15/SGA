@@ -1,10 +1,11 @@
-const alumnos = require("../data/alumnos")
+const Alumno = require("../models/Alumno")
 
-function obtenerAlumnos(req, res){
+async function obtenerAlumnos(req, res){
+    const alumnos = await Alumno.find()
     res.json(alumnos)
 }
 
-function obtenerAlumno(req, res) {
+ function obtenerAlumno(req, res) {
     const id = Number(req.params.id)
     const alumno = alumnos.find(a => a.id === id)
     if (!alumno){
@@ -18,7 +19,7 @@ function obtenerAlumno(req, res) {
 
 function crearAlumno(req, res) {
     const nuevoAlumno = req.body
-    const {id, nombre, carrera} = req.body
+    const {id, nombre, carrera} = req.body //body representa el cuerpo de lo que se pide
     if(!id || !nombre || !carrera){
         return res.status(400).json({
             mensaje: "Todos los campos son obligatorios"

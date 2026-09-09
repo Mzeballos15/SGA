@@ -1,10 +1,11 @@
 const express =require("express")
 const app = express()
 app.use(express.json()) 
-
 const alumnosRoutes = require("./routes/alumnos.routes")
 app.use("/alumnos", alumnosRoutes)
+const conectarDB = require("./config/database")
 
+conectarDB()
 
 
 // Creo un middleware
