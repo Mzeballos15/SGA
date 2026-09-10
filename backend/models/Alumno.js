@@ -6,6 +6,9 @@ const alumnoSchema = new mongoose.Schema({ //muestro como es el esquema
     nombre: String,
     carrera: String,
     correo: String
+},
+{
+    versionKey: false
 })
 
 const Alumno = mongoose.model("Alumno", alumnoSchema)
