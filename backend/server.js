@@ -1,9 +1,12 @@
+// server conecta
 const express =require("express")
 const app = express()
 app.use(express.json()) 
 const alumnosRoutes = require("./routes/alumnos.routes")
 app.use("/alumnos", alumnosRoutes)
 const conectarDB = require("./config/database")
+require("dotenv").config()
+const PORT = process.env.PORT //busca en el archivo env una variable llamada PORT
 
 conectarDB()
 
@@ -55,7 +58,7 @@ app.get("/docentes/:id", (req, res) =>{
     res.json(docente)
 })
 
-app.listen(3000, () =>{
-    console.log("Servidor funcionando en http://localhost:3000")
+app.listen(PORT, () =>{
+    console.log(`Servidor funcionando en http://localhost:${PORT}`)
 })
 

@@ -21,7 +21,7 @@ POST http://localhost:3000/alumnos
 Content-Type: application/json 
 
 {
-    "legajo":1021,
+    "legajo": 1003,
     "nombre":"Ramon",
     "carrera":"Sistemas",
     "correo":"ramon@mail.com"
@@ -39,13 +39,13 @@ Content-Type: application/json
 
 ###
 // put actualiza
-PUT http://localhost:3000/alumnos/1003
+PUT http://localhost:3000/alumnos/1002
 Content-Type: application/json
 
 {
-    "legajo":1003,
-    "nombre":"Juan",
-    "carrera":"Sistemas",
+    "legajo": 1002,
+    "nombre": "Juan",
+    "carrera": "Programación",
     "correo": "juan@mail.com"
 }
 
@@ -53,4 +53,4 @@ Content-Type: application/json
 GET http://localhost:3000/alumnos/2
 
 ###
-DELETE http://localhost:3000/alumnos/1021
+DELETE http://localhost:3000/alumnos/1030
