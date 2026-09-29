@@ -56,7 +56,7 @@ async function crearAlumno(req, res) {
 }
 
 async function actualizarAlumno(req, res) {
-     const { nombre, carrera, correo } = req.body
+    const { nombre, carrera, correo } = req.body
     const alumno = await Alumno.findOneAndUpdate( // Usamos el método findOneAndUpdate() del modelo Alumno para actualizar un documento de la colección de alumnos en la base de datos que coincida con el legajo proporcionado en los parámetros de la ruta
         { legajo: Number(req.params.id) }, // Convertimos el parámetro id a número para poder compararlo con el campo legajo de los documentos de la colección de alumnos
         { nombre, carrera, correo }, // Los datos que se enviarán en el cuerpo de la petición para actualizar el alumno

@@ -168,3 +168,4 @@ async function prueba(){
 const respuesta = await fetch("https://jsonplaceholder.typicode.com/users")
 console.log(respuesta)
 }
+
