@@ -1,9 +1,11 @@
-import FormularioA from "./components/FormularioA"
+import Pantalla from "./components/ejemplos/Pantalla"
 
 function App(){
 
   return(
-   <FormularioA/>
+    <>
+   <Pantalla/>
+    </>
   )
 }
 export default App
