@@ -5,7 +5,7 @@ function FormularioA({ onAlumnoCreado }){
      const [formulario, setFormulario] = useState({
         legajo: "",
         nombre: "",
-        carrrera: "",
+        carrera: "",
         correo: ""
     })
     const [error, setError] = useState("")
@@ -45,7 +45,7 @@ function FormularioA({ onAlumnoCreado }){
                 carrera: "",
                 correo: ""
             })
-            
+
          onAlumnoCreado()
         } catch (error) {
             console.error("Error al guardar:", error)
