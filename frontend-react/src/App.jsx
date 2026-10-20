@@ -1,11 +1,11 @@
-import Pantalla from "./components/ejemplos/Pantalla"
+import { ListaAlumnos } from "./components/ListaAlumnos"
 
 function App(){
 
-  return(
-    <>
-   <Pantalla/>
-    </>
+return (
+   <>
+  <ListaAlumnos />
+   </>
   )
 }
 export default App
