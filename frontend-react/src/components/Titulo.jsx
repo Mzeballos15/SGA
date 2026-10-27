@@ -3,5 +3,6 @@
     return(
          <h1 style={{color}}>{texto}</h1>
     )
-}
+}//
+
 export default Titulo
