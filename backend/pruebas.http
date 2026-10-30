@@ -54,3 +54,18 @@ GET http://localhost:3000/alumnos/2
 
 ###
 DELETE http://localhost:3000/alumnos/1030
+
+
+###
+GET http://localhost:3000/docentes
+
+###
+POST http://localhost:3000/docentes
+Content-Type: application/json
+
+{
+    "dni": 5222311,
+    "nombre": "Rocío",
+    "especialidad": "Programación",
+    "correo": "rocio@mail.com"
+}
