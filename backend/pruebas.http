@@ -69,3 +69,50 @@ Content-Type: application/json
     "especialidad": "Programación",
     "correo": "rocio@mail.com"
 }
+
+// pruebas materias
+
+//busqueda completa
+###
+GET http://localhost:3000/materias
+
+//creación
+###
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "codigo":"5850M",
+    "nombre": "Sociales",
+    "descripcion": "          ",
+    "cargaHoraria": "2",
+    "estado": "activa"
+}
+
+//búsqueda individual existente
+###
+GET http://localhost:3000/materias/5850M
+
+
+//búsqueda individual inexistente 
+###
+GET http://localhost:3000/materias/28PP
+
+
+//eliminación
+###
+DELETE http://localhost:3000/materias/5850M
+
+
+###
+// put actualiza
+PUT http://localhost:3000/materias/5850M
+Content-Type: application/json
+
+{
+    "codigo": "5850M",
+    "nombre": "Sociales",
+    "descripcion": "",
+    "cargaHoraria": "3",
+    "estado": "activa"
+}
