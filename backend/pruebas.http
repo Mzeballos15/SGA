@@ -70,6 +70,17 @@ Content-Type: application/json
     "correo": "rocio@mail.com"
 }
 
+###
+POST http://localhost:3000/auth/loging
+Content-Type: application/json
+
+{
+    "email":"admin@sga.com",
+    "password": "ClaveDePrueba123!"
+    
+}
+
+
 // pruebas materias
 
 //busqueda completa
@@ -116,3 +127,5 @@ Content-Type: application/json
     "cargaHoraria": "3",
     "estado": "activa"
 }
+
+
