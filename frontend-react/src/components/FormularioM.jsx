@@ -82,7 +82,7 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }) {
                 cargaHoraria: "",
                 estado: ""
             })
-            onMateriaCreada()
+            onMateriaCreada(editando ? "Materia modificada correctamente" : "Materia guardada correctamente")
         } catch (error) {
             console.error("Error al guardar:", error)
             setError(error.message || "No se pudo conectar con el servidor")
@@ -124,7 +124,6 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }) {
                     label="Código"
                     value={formulario.codigo}
                     onChange={manejarCambio}
-                    required
                     fullWidth
                 />
                 <TextField
@@ -133,7 +132,6 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }) {
                     label="Nombre"
                     value={formulario.nombre}
                     onChange={manejarCambio}
-                    required
                     fullWidth
                 />
                 <TextField
@@ -150,7 +148,6 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }) {
                     label="Carga Horaria"
                     value={formulario.cargaHoraria}
                     onChange={manejarCambio}
-                    required
                     fullWidth
                 />
                 <TextField
@@ -159,7 +156,6 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }) {
                     label="Estado"
                     value={formulario.estado}
                     onChange={manejarCambio}
-                    required
                     fullWidth
                 />
                 <Box

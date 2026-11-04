@@ -19,7 +19,7 @@ export function ListaMaterias({ actualizar, onMateriaCreada, onEditarMateria }) 
             if (!respuesta.ok) {
                 throw new Error(`No se pudo eliminar. Estado HTTP: ${respuesta.status}`)
             }
-            onMateriaCreada()
+            onMateriaCreada("Materia eliminada correctamente")
         } catch (error) {
             console.error("Error al eliminar: ", error)
             alert(error.message || "No se pudo eliminar la materia")
