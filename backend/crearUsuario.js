@@ -16,7 +16,7 @@ async function crearUsuario() {
             nombre: "Administrador de prueba",
             email: email,
             password: hash,
-            rol: "asmin"
+            rol: "admin"
         })
         await usuario.save()
 
