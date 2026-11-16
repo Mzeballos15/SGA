@@ -1,6 +1,6 @@
-const mongoose = require("mongoose") // traigo la libreria mongoose que va a actuar como traductor entre el código y la bdd mongodb
+const mongoose = require("mongoose") 
 
-const materiaSchema = new mongoose.Schema({  //creo la estructura que va a tener la materia 
+const materiaSchema = new mongoose.Schema({  
     codigo: {
       type: String,
       unique: true,

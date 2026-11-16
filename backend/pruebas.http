@@ -79,6 +79,15 @@ Content-Type: application/json
     "password": "ClaveDePrueba123!"
 }
 
+###
+GET http://localhost:3000/alumnos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZWEyYWQ1NjFkMGI1Y2JlNjhkNzc5MiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzk0NTA3NzA4LCJleHAiOjE3OTQ1MTEzMDh9.4hJI9sagHXqa3DNDi57-flI0Pa8d4auGU069kJKKGKM
+
+
+
+
+
+
 
 // pruebas materias
 
