@@ -6,7 +6,7 @@ const RutaProtegida = () => {
     if(cargando){
         return <p>Verificando Sesión...</p>
     }
-    
+
     if(!token){
         return <Navigate to="/login" replace/>
     }
