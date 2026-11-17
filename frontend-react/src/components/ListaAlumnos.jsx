@@ -19,8 +19,13 @@ const [error, setError] = useState("")
             return
         }
         try {
+            const token = localStorage.getItem("token")
             const respuesta = await fetch(`${API_ALUMNOS}/${legajo}`, 
-                { method: "DELETE" }
+                { method: "DELETE",
+                    headers:{
+                        Authorization: `Bearer ${token}`
+                    }
+                 }
             )
             if (!respuesta.ok) {
                 throw new Error(`No se pudo eliminar. Estado HTTP: ${respuesta.status}`)
@@ -34,10 +39,14 @@ const [error, setError] = useState("")
 
     useEffect(() => {
         async function cargarAlumnos(){
-              setCargando(true)
-            setError("")
+            setCargando(true)
+             setError("")
             try {
-            const respuesta = await fetch(API_ALUMNOS)
+            const token = localStorage.getItem("token")
+            const respuesta = await fetch(API_ALUMNOS, {
+                headers: {
+                    Authorization: `Bearer ${token}`}
+            })
 
             if (!respuesta.ok){
                 throw new Error("No se pudo obtener la lista", respuesta.status)
